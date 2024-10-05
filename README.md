@@ -67,7 +67,8 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == "__main__":
-    db.create_all()
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
 ```
 Change the home page to list all the todos
